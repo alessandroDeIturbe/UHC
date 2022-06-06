@@ -1,7 +1,0 @@
-name: Uhc
-version: '1.0-SNAPSHOT'
-main: archietech.uhc.Uhc
-api-version: 1.18
-description: UHC Plugin
-website: https://www.github.com/adrytech/UHC
-author: [Alessandro De Iturbe, Delucchi Adriano]
