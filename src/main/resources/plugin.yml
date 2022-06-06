@@ -4,3 +4,8 @@ main: me.archietech.com.uhc.UHC
 api-version: 1.18
 authors: [ alessandroDeIturbe, _AdryTech_ ]
 description: A Spigot-Minecraft plugin for UHCs
+commands:
+  start:
+    description: Run uhc command
+    usage: /<start>
+    permission: uhc.ops
