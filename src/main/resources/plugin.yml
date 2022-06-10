@@ -8,6 +8,6 @@ commands:
   start:
     description: Run uhc command
     usage: /<start>
-    aliases: i
+    aliases: s
     permission: uhc.ops
     permission-message: You do not have permission to use this command.
