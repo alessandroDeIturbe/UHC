@@ -1,5 +1,5 @@
 name: UHC
-version: '${project.version}'
+version: 1.0
 main: me.archietech.com.uhc.UHC
 api-version: 1.18
 authors: [ alessandroDeIturbe, _AdryTech_ ]
@@ -8,4 +8,6 @@ commands:
   start:
     description: Run uhc command
     usage: /<start>
+    aliases: i
     permission: uhc.ops
+    permission-message: You do not have permission to use this command.
