@@ -11,3 +11,9 @@ commands:
     aliases: s
     permission: uhc.ops
     permission-message: You do not have permission to use this command.
+  setup:
+    description: setup world for uhc
+    usage: /<setup>
+    aliases: set
+    permission: uhc.ops
+    permission-message: You do not have permission to use this command.

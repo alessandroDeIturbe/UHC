@@ -10,6 +10,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.meta.FireworkMeta;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.ScoreboardManager;
+import org.bukkit.scoreboard.Team;
 
 public class PlayerJoin implements Listener {
     @EventHandler
@@ -30,5 +33,9 @@ public class PlayerJoin implements Listener {
                         + ChatColor.DARK_GREEN+ "/20" + ChatColor.RED
                         + "\n<====================>\n",
                 ChatColor.LIGHT_PURPLE.toString() + ChatColor.ITALIC +"\nby _AdryTech_ & Archiebold2250");
+
+
     }
+
+
 }
