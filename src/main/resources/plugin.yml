@@ -1,6 +1,6 @@
 name: UHC
 version: 1.0
-main: me.archietech.com.uhc.UHC
+main: me.archietech.uhc.UHC
 api-version: 1.18
 authors: [ alessandroDeIturbe, _AdryTech_ ]
 description: A Spigot-Minecraft plugin for UHCs
