@@ -2,11 +2,9 @@ package me.archietech.uhc;
 
 import me.archietech.uhc.commands.Setup;
 import me.archietech.uhc.commands.Start;
+import me.archietech.uhc.commands.Test;
 import me.archietech.uhc.listeners.PlayerJoin;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.logging.Logger;
 
 public final class UHC extends JavaPlugin {
 
@@ -18,6 +16,7 @@ public final class UHC extends JavaPlugin {
 
         this.getCommand("start").setExecutor(new Start());
         this.getCommand("setup").setExecutor(new Setup());
+        this.getCommand("test").setExecutor(new Test());
     }
 
     @Override

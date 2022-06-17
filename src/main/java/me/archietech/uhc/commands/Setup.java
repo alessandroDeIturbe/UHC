@@ -6,11 +6,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
-import org.bukkit.scoreboard.Team;
+import org.bukkit.scoreboard.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -24,13 +23,6 @@ public class Setup implements CommandExecutor {
             player = (Player) sender;
             if (player.hasPermission("uhc.ops")) {
 
-                /*
-                 * creare team
-                 * randomizzare 2 player nei team
-                 *
-                 *
-                 */
-
                 int all = Bukkit.getServer().getOnlinePlayers().size();
 
                 if (all < 4) {
@@ -42,8 +34,12 @@ public class Setup implements CommandExecutor {
 
                 }
 
-
-            } else {
+//              Get Center
+                HashMap<String, Integer> center = new HashMap<>();
+                center.put("x", player.getLocation().getBlockX());
+                center.put("y", player.getLocation().getBlockY());
+                center.put("z", player.getLocation().getBlockZ());
+                player.sendMessage(String.format(ChatColor.GREEN + "The center is positioned on %d, %d, %d", center.get("x"), center.get("y"), center.get("z")));
 
             }
 
@@ -53,10 +49,10 @@ public class Setup implements CommandExecutor {
 
     public void createScoreboard(Player player) {
 
+//      Teams
         ScoreboardManager manager = Bukkit.getScoreboardManager();
 
         Scoreboard board = manager.getMainScoreboard();
-
 
         Team red = board.registerNewTeam("Red");
         Team blue = board.registerNewTeam("Blue");
@@ -81,12 +77,19 @@ public class Setup implements CommandExecutor {
         yellow.allowFriendlyFire();
         green.allowFriendlyFire();
 
+//      Health
+        Objective health = board.registerNewObjective("showhealth", "health");
+        health.setDisplaySlot(DisplaySlot.BELOW_NAME);
+        health.setDisplayName("/ 10");
+
+        for (Player online : Bukkit.getOnlinePlayers()) {
+            online.setScoreboard(board);
+            online.setHealth(online.getHealth() / 2);
+        }
+
         List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
         List<Player> players2 = new ArrayList<>(Bukkit.getOnlinePlayers());
         Player randomp1= players.get(new Random().nextInt(players.size()));
         Player randomp2= players.get(new Random().nextInt(players.size()));
-
-
-
-    }
+        }
 }

@@ -17,3 +17,9 @@ commands:
     aliases: set
     permission: uhc.ops
     permission-message: You do not have permission to use this command.
+  test:
+    description: test command
+    usage: /<test>
+    aliases: test
+    permission: uhc.ops
+    permission-message: You do not have permission to use this command.
